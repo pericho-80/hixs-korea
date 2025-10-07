@@ -104,114 +104,135 @@ export default function App() {
         </h2>
         
         {/* Product Selection */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '12px',
-          marginBottom: '24px'
-        }}>
+        <div style={{ marginBottom: '24px' }}>
           {Object.entries(productData).map(([key, product]) => (
-            <div
-              key={key}
-              onClick={() => setSelectedProduct(key)}
-              style={{
-                cursor: 'pointer',
-                padding: '24px',
-                borderRadius: '16px',
-                background: selectedProduct === key 
-                  ? 'linear-gradient(to bottom right, #475569, #64748b)'
-                  : '#1f2937',
-                transition: 'all 0.3s',
-                transform: selectedProduct === key ? 'scale(1.05)' : 'scale(1)',
-                border: selectedProduct === key ? '2px solid #60a5fa' : '2px solid transparent'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: 'bold' }}>{product.name}</h3>
-                <span style={{ fontSize: '24px', transform: selectedProduct === key ? 'rotate(90deg)' : 'rotate(0)', transition: 'transform 0.3s' }}>
-                  ›
-                </span>
+            <div key={key} style={{ marginBottom: '16px' }}>
+              <div
+                onClick={() => setSelectedProduct(selectedProduct === key ? '' : key)}
+                style={{
+                  padding: '20px',
+                  borderRadius: '16px',
+                  background: selectedProduct === key 
+                    ? 'linear-gradient(to bottom right, #475569, #64748b)'
+                    : '#1f2937',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s',
+                  border: selectedProduct === key ? '2px solid #60a5fa' : '2px solid transparent'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div>
+                    <h3 style={{ fontSize: '22px', fontWeight: 'bold', marginBottom: '8px' }}>
+                      {product.name}
+                    </h3>
+                    <p style={{ fontSize: '16px', marginBottom: '4px' }}>{product.subtitle}</p>
+                    <p style={{ fontSize: '14px', color: '#d1d5db' }}>{product.description}</p>
+                  </div>
+                  <span style={{ 
+                    fontSize: '24px', 
+                    transform: selectedProduct === key ? 'rotate(90deg)' : 'rotate(0)', 
+                    transition: 'transform 0.3s' 
+                  }}>
+                    ›
+                  </span>
+                </div>
               </div>
-              <p style={{ fontSize: '18px', marginBottom: '8px' }}>{product.subtitle}</p>
-              <p style={{ fontSize: '14px', color: '#d1d5db' }}>{product.description}</p>
+              
+              {/* Product Details - 바로 아래 표시 */}
+              {selectedProduct === key && (
+                <div style={{ 
+                  marginTop: '12px',
+                  background: 'linear-gradient(to bottom right, #334155, #475569)',
+                  borderRadius: '16px',
+                  padding: '20px 16px',
+                  animation: 'slideDown 0.3s ease-out'
+                }}>
+                  <h4 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>特徴</h4>
+                  <div style={{ display: 'grid', gap: '12px' }}>
+                    {product.features.map((feature, idx) => (
+                      <div key={idx} style={{ 
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '12px',
+                        background: 'rgba(255, 255, 255, 0.1)',
+                        borderRadius: '12px',
+                        padding: '12px'
+                      }}>
+                        <span style={{ fontSize: '24px' }}>{feature.icon}</span>
+                        <p style={{ fontSize: '15px' }}>{feature.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* 유튜브 영상 썸네일 */}
+                  <div style={{ marginTop: '20px' }}>
+                    <p style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '12px', textAlign: 'center' }}>
+                      📹 使用レビュー動画
+                    </p>
+                    <a
+                      href={product.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'block',
+                        position: 'relative',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        cursor: 'pointer',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+                      }}
+                    >
+                      <img 
+                        src={`https://img.youtube.com/vi/${product.videoUrl.split('/').pop()}/maxresdefault.jpg`}
+                        alt={`${product.name} 使用レビュー`}
+                        style={{
+                          width: '100%',
+                          height: 'auto',
+                          display: 'block',
+                          aspectRatio: '16/9'
+                        }}
+                      />
+                      {/* 재생 버튼 오버레이 */}
+                      <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        background: 'rgba(0, 0, 0, 0.3)',
+                        transition: 'background 0.3s'
+                      }}
+                      onMouseOver={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.5)'}
+                      onMouseOut={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.3)'}
+                      >
+                        <div style={{
+                          width: '70px',
+                          height: '70px',
+                          background: 'rgba(220, 38, 38, 0.95)',
+                          borderRadius: '50%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          transition: 'transform 0.3s',
+                          transform: 'scale(1)'
+                        }}
+                        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.15)'}
+                        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                        >
+                          <svg style={{ width: '35px', height: '35px', marginLeft: '4px' }} viewBox="0 0 24 24" fill="white">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
-        </div>
-
-        {/* Selected Product Details */}
-        <div style={{ 
-          background: 'linear-gradient(to bottom right, #475569, #64748b)',
-          borderRadius: '20px',
-          padding: '20px 12px',
-          marginBottom: '24px'
-        }}>
-          <h3 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '24px' }}>
-            {productData[selectedProduct].name} の特徴
-          </h3>
-          <div style={{ 
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '24px'
-          }}>
-            {productData[selectedProduct].features.map((feature, idx) => (
-              <div key={idx} style={{ 
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px',
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: '12px',
-                padding: '16px'
-              }}>
-                <span style={{ fontSize: '28px' }}>{feature.icon}</span>
-                <p style={{ fontSize: '16px' }}>{feature.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Product Video */}
-        <div style={{ marginBottom: '24px' }}>
-          <h2 style={{ fontSize: '28px', fontWeight: 'bold', textAlign: 'center', marginBottom: '16px' }}>
-            製品紹介動画
-          </h2>
-          <div style={{ maxWidth: '500px', margin: '0 auto', padding: '0 8px' }}>
-            <div style={{ 
-              background: '#1f2937',
-              borderRadius: '20px',
-              padding: '20px 12px',
-              textAlign: 'center'
-            }}>
-              <div style={{ marginBottom: '24px' }}>
-                <svg style={{ width: '96px', height: '96px', margin: '0 auto', color: '#ef4444' }} viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-              </div>
-              <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>
-                {productData[selectedProduct].name} 使用レビュー
-              </h3>
-              <a
-                href={productData[selectedProduct].videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-block',
-                  background: '#dc2626',
-                  color: 'white',
-                  padding: '12px 32px',
-                  borderRadius: '9999px',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  transition: 'background 0.3s'
-                }}
-                onMouseOver={(e) => e.target.style.background = '#b91c1c'}
-                onMouseOut={(e) => e.target.style.background = '#dc2626'}
-              >
-                YouTube Shortsで見る
-              </a>
-            </div>
-          </div>
         </div>
 
         {/* Common Features */}
@@ -257,16 +278,19 @@ export default function App() {
               borderRadius: '16px',
               padding: '24px'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '24px' }}>✅</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '16px' }}>
+                <span style={{ fontSize: '24px', flexShrink: 0 }}>✅</span>
                 <p style={{ fontSize: '18px' }}>製品無償提供（Gripbank または Tourisme をお選びいただけます）</p>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '24px' }}>✅</span>
-                <p style={{ fontSize: '18px' }}>実際に使用した感想を投稿</p>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '16px' }}>
+                <span style={{ fontSize: '24px', flexShrink: 0 }}>✅</span>
+                <div>
+                  <p style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px' }}>Instagram リールで使用レビューを投稿</p>
+                  <p style={{ fontSize: '14px', color: '#f0fdf4' }}>実際に使用した感想を15〜60秒のリール動画で共有</p>
+                </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <span style={{ fontSize: '24px' }}>✅</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                <span style={{ fontSize: '24px', flexShrink: 0 }}>✅</span>
                 <p style={{ fontSize: '18px' }}>プロフィールに商品リンクを掲載</p>
               </div>
             </div>
