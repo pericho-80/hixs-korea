@@ -82,18 +82,19 @@ export default function App() {
             backdropFilter: 'blur(10px)',
             borderRadius: '24px',
             padding: '24px 12px',
-            textAlign: 'center'
+            textAlign: 'center',
+            border: '2px solid rgba(96, 165, 250, 0.3)'
           }}>
-            <h2 style={{ fontSize: '30px', fontWeight: 'bold', marginBottom: '24px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#60a5fa' }}>
               モニタープログラムのご案内
             </h2>
-            <p style={{ fontSize: '18px', color: '#d1d5db', marginBottom: '16px' }}>
-              StyleSellerでは、品質の高い製品を実際に体験いただける
+            <p style={{ fontSize: '16px', color: '#d1d5db', marginBottom: '12px' }}>
+              StyleSellerでは、品質の高い製品を
             </p>
-            <p style={{ fontSize: '18px', color: '#d1d5db', marginBottom: '24px' }}>
-              モニター様を募集しております。
+            <p style={{ fontSize: '16px', color: '#d1d5db', marginBottom: '16px' }}>
+              実際に体験いただけるモニター様を募集しております。
             </p>
-            <p style={{ color: '#9ca3af' }}>
+            <p style={{ fontSize: '14px', color: '#9ca3af' }}>
               ご興味のある方は、以下の製品ラインナップをご覧ください。
             </p>
           </div>
@@ -179,9 +180,7 @@ export default function App() {
                         borderRadius: '12px',
                         overflow: 'hidden',
                         cursor: 'pointer',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-                        maxWidth: '300px',
-                        margin: '0 auto'
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
                       }}
                     >
                       <img 
@@ -191,7 +190,7 @@ export default function App() {
                           width: '100%',
                           height: 'auto',
                           display: 'block',
-                          aspectRatio: '9/16'
+                          aspectRatio: '16/9'
                         }}
                       />
                       {/* 재생 버튼 오버레이 */}
@@ -282,18 +281,24 @@ export default function App() {
             }}>
               <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
                 <span style={{ fontSize: '24px', flexShrink: 0, color: '#fef08a', display: 'block', paddingTop: '2px' }}>✓</span>
-                <p style={{ fontSize: '18px', margin: 0 }}>製品無償提供（Gripbank または Tourisme をお選びいただけます）</p>
+                <div style={{ margin: 0 }}>
+                  <p style={{ fontSize: '18px', margin: 0, marginBottom: '4px' }}>製品無償提供（Gripbank または Tourisme から1つお選びいただけます）</p>
+                  <p style={{ fontSize: '13px', color: '#d1fae5', margin: 0 }}>お好きなデザインをお選びください</p>
+                </div>
               </div>
               <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
                 <span style={{ fontSize: '24px', flexShrink: 0, color: '#fef08a', display: 'block', paddingTop: '2px' }}>✓</span>
                 <div style={{ margin: 0 }}>
                   <p style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px', marginTop: 0 }}>Instagram リールで使用レビューを投稿</p>
-                  <p style={{ fontSize: '14px', color: '#f0fdf4', margin: 0 }}>実際に使用した感想を15〜60秒のリール動画で共有</p>
+                  <p style={{ fontSize: '13px', color: '#d1fae5', margin: 0 }}>実際に使用した感想を15〜60秒のリール動画で共有</p>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <span style={{ fontSize: '24px', flexShrink: 0, color: '#fef08a', display: 'block', paddingTop: '2px' }}>✓</span>
-                <p style={{ fontSize: '18px', margin: 0 }}>プロフィールに商品リンクを掲載</p>
+                <div style={{ margin: 0 }}>
+                  <p style={{ fontSize: '18px', margin: 0, marginBottom: '4px' }}>プロフィールに商品リンクを掲載</p>
+                  <p style={{ fontSize: '13px', color: '#d1fae5', margin: 0 }}>リンク掲載は1週間</p>
+                </div>
               </div>
             </div>
           </div>
