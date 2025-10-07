@@ -179,7 +179,9 @@ export default function App() {
                         borderRadius: '12px',
                         overflow: 'hidden',
                         cursor: 'pointer',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                        maxWidth: '300px',
+                        margin: '0 auto'
                       }}
                     >
                       <img 
@@ -189,7 +191,7 @@ export default function App() {
                           width: '100%',
                           height: 'auto',
                           display: 'block',
-                          aspectRatio: '16/9'
+                          aspectRatio: '9/16'
                         }}
                       />
                       {/* 재생 버튼 오버레이 */}
@@ -278,20 +280,20 @@ export default function App() {
               borderRadius: '16px',
               padding: '24px'
             }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '24px', flexShrink: 0 }}>✅</span>
-                <p style={{ fontSize: '18px' }}>製品無償提供（Gripbank または Tourisme をお選びいただけます）</p>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
+                <span style={{ fontSize: '24px', flexShrink: 0, lineHeight: '1.5', color: '#fef08a' }}>✓</span>
+                <p style={{ fontSize: '18px', lineHeight: '1.5' }}>製品無償提供（Gripbank または Tourisme をお選びいただけます）</p>
               </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '24px', flexShrink: 0 }}>✅</span>
-                <div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
+                <span style={{ fontSize: '24px', flexShrink: 0, lineHeight: '1.5', color: '#fef08a' }}>✓</span>
+                <div style={{ lineHeight: '1.5' }}>
                   <p style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px' }}>Instagram リールで使用レビューを投稿</p>
                   <p style={{ fontSize: '14px', color: '#f0fdf4' }}>実際に使用した感想を15〜60秒のリール動画で共有</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                <span style={{ fontSize: '24px', flexShrink: 0 }}>✅</span>
-                <p style={{ fontSize: '18px' }}>プロフィールに商品リンクを掲載</p>
+                <span style={{ fontSize: '24px', flexShrink: 0, lineHeight: '1.5', color: '#fef08a' }}>✓</span>
+                <p style={{ fontSize: '18px', lineHeight: '1.5' }}>プロフィールに商品リンクを掲載</p>
               </div>
             </div>
           </div>
