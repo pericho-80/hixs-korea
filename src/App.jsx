@@ -280,20 +280,20 @@ export default function App() {
               borderRadius: '16px',
               padding: '24px'
             }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
-                <span style={{ fontSize: '24px', flexShrink: 0, lineHeight: '1.5', color: '#fef08a' }}>✓</span>
-                <p style={{ fontSize: '18px', lineHeight: '1.5' }}>製品無償提供（Gripbank または Tourisme をお選びいただけます）</p>
+              <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
+                <span style={{ fontSize: '24px', flexShrink: 0, color: '#fef08a', display: 'block', paddingTop: '2px' }}>✓</span>
+                <p style={{ fontSize: '18px', margin: 0 }}>製品無償提供（Gripbank または Tourisme をお選びいただけます）</p>
               </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
-                <span style={{ fontSize: '24px', flexShrink: 0, lineHeight: '1.5', color: '#fef08a' }}>✓</span>
-                <div style={{ lineHeight: '1.5' }}>
-                  <p style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px' }}>Instagram リールで使用レビューを投稿</p>
-                  <p style={{ fontSize: '14px', color: '#f0fdf4' }}>実際に使用した感想を15〜60秒のリール動画で共有</p>
+              <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
+                <span style={{ fontSize: '24px', flexShrink: 0, color: '#fef08a', display: 'block', paddingTop: '2px' }}>✓</span>
+                <div style={{ margin: 0 }}>
+                  <p style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px', marginTop: 0 }}>Instagram リールで使用レビューを投稿</p>
+                  <p style={{ fontSize: '14px', color: '#f0fdf4', margin: 0 }}>実際に使用した感想を15〜60秒のリール動画で共有</p>
                 </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                <span style={{ fontSize: '24px', flexShrink: 0, lineHeight: '1.5', color: '#fef08a' }}>✓</span>
-                <p style={{ fontSize: '18px', lineHeight: '1.5' }}>プロフィールに商品リンクを掲載</p>
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <span style={{ fontSize: '24px', flexShrink: 0, color: '#fef08a', display: 'block', paddingTop: '2px' }}>✓</span>
+                <p style={{ fontSize: '18px', margin: 0 }}>プロフィールに商品リンクを掲載</p>
               </div>
             </div>
           </div>
