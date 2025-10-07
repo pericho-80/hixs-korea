@@ -292,7 +292,7 @@ export default function App() {
               <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
                 <span style={{ fontSize: '24px', flexShrink: 0, color: '#fef08a', display: 'block', paddingTop: '2px' }}>✓</span>
                 <div style={{ margin: 0 }}>
-                  <p style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px', marginTop: 0 }}>Instagram リールで使用レビューを投稿</p>
+                  <p style={{ fontSize: '18px', marginBottom: '4px', marginTop: 0, letterSpacing: '-0.5px' }}>Instagram リールで使用レビューを投稿</p>
                   <p style={{ fontSize: '13px', color: '#d1fae5', margin: 0 }}>実際に使用した感想を15〜60秒のリール動画で共有</p>
                 </div>
               </div>
