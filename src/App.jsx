@@ -88,11 +88,14 @@ export default function App() {
             <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#60a5fa' }}>
               モニタープログラムのご案内
             </h2>
-            <p style={{ fontSize: '16px', color: '#d1d5db', marginBottom: '12px' }}>
-              StyleSellerでは、品質の高い製品を
+            <p style={{ fontSize: '16px', color: '#d1d5db', marginBottom: '8px' }}>
+              StyleSellerでは、
+            </p>
+            <p style={{ fontSize: '16px', color: '#d1d5db', marginBottom: '8px' }}>
+              品質の高い製品を実際に体験いただける
             </p>
             <p style={{ fontSize: '16px', color: '#d1d5db', marginBottom: '16px' }}>
-              実際に体験いただけるモニター様を募集しております。
+              モニター様を募集しております。
             </p>
             <p style={{ fontSize: '14px', color: '#9ca3af' }}>
               ご興味のある方は、以下の製品ラインナップをご覧ください。
@@ -282,8 +285,8 @@ export default function App() {
               <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
                 <span style={{ fontSize: '24px', flexShrink: 0, color: '#fef08a', display: 'block', paddingTop: '2px' }}>✓</span>
                 <div style={{ margin: 0 }}>
-                  <p style={{ fontSize: '18px', margin: 0, marginBottom: '4px' }}>製品無償提供（Gripbank または Tourisme から1つお選びいただけます）</p>
-                  <p style={{ fontSize: '13px', color: '#d1fae5', margin: 0 }}>お好きなデザインをお選びください</p>
+                  <p style={{ fontSize: '18px', margin: 0, marginBottom: '4px' }}>製品無償提供（各シリーズから1つずつ、計2個お選びいただけます）</p>
+                  <p style={{ fontSize: '13px', color: '#d1fae5', margin: 0 }}>Gripbank と Tourisme から、それぞれお好きなデザインを1つずつ</p>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
